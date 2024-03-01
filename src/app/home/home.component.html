@@ -1,0 +1,5 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Products"> <app-products></app-products> </mat-tab>
+  <mat-tab label="Orders"> <div>Orders</div></mat-tab>
+  <mat-tab *ngIf="userIsAdmin" label="Customers"><div>Customers</div></mat-tab>
+</mat-tab-group>

@@ -1,0 +1,15 @@
+<mat-dialog-content>
+  <!-- dropdown with quantities up to 10 -->
+  <mat-form-field>
+    <mat-label>Quantity</mat-label>
+    <mat-select [(value)]="quantity">
+      <mat-option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" [value]="i">
+        {{ i }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onSubmit()">Add to cart</button>
+  <button mat-button (click)="close()">Cancel</button>
+</mat-dialog-actions>

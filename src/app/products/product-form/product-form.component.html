@@ -1,0 +1,30 @@
+<mat-dialog-content [formGroup]="productForm!">
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+  </p>
+ <p>
+  <mat-form-field>
+    <input matInput placeholder="Price" type="number" formControlName="price">
+  </mat-form-field>
+ </p>
+ <p>
+  <mat-form-field>
+    <textarea matInput
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+    cdkAutosizeMinRows="1"
+    cdkAutosizeMaxRows="5"
+    placeholder="Description"
+    formControlName="description">
+    </textarea>
+  </mat-form-field>
+ </p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button (click)="close()">Close</button>
+  <button mat-raised-button color="primary"
+  (click)="onSubmit()" [disabled]="!productForm!.valid">Save</button>
+</mat-dialog-actions>

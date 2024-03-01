@@ -1,0 +1,31 @@
+<div class="content">
+  <div class="login-page">
+      <div class="img">
+          <img src="assets/placeholder.png" alt="login image" />
+      </div>
+      <div class="login-form">
+          <form [formGroup]="loginForm!">
+              <mat-form-field >
+                  <input matInput placeholder="Username" formControlName="username">
+                  <mat-error *ngIf="loginForm?.get('username')?.hasError('required')">Username is required</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                  <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password"/>
+                  <button matSuffix mat-icon-button aria-label="Clear" (click)="hide = !hide">
+                      <ng-container *ngIf="hide">
+                          <mat-icon>visibility_off</mat-icon>
+                      </ng-container>
+                      <ng-container *ngIf="!hide">
+                          <mat-icon>visibility_on</mat-icon>
+                      </ng-container>
+                  </button>
+                  <mat-error *ngIf="loginForm?.get('password')?.hasError('required')">Password is required</mat-error>
+              </mat-form-field>
+              <button mat-raised-button color="primary" [disabled]="!loginForm!.valid"
+                  (click)="onSubmit(loginForm!.value)">Login</button>
+                  <!-- New here? register -->
+              <a routerLink="/register">New here? Register</a>
+          </form>
+      </div>
+  </div>
+</div>

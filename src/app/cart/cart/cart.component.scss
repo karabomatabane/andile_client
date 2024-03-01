@@ -1,0 +1,62 @@
+h2  {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* In your component's CSS file or in your global styles file */
+
+/* Container for the cart items */
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+/* Style for the "No items in cart" message */
+.cart-empty-message {
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/* Style for each cart item */
+.cart-item {
+  display: flex;
+  flex-direction: column; /* Vertical layout */
+  margin: 10px;
+  padding: 10px;
+  background-color: #424242;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Set a fixed width for each cart item */
+  border-radius: 5px;
+}
+
+/* Style for the cart item image */
+.cart-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  aspect-ratio: 1/1; /* Maintain aspect ratio */
+}
+
+/* Style for the cart item details */
+.cart-item-details {
+  flex: 1;
+}
+
+/* Style for the "Remove" button */
+.cart-item button {
+  background-color: #ff5c5c;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add hover effect to the "Remove" button */
+.cart-item button:hover {
+  background-color: #d43f3f;
+}

@@ -1,0 +1,18 @@
+<h2 *ngIf="!cart?.products || cart.products.length < 1">No items in cart</h2>
+
+<div class="cart-container">
+  <h2 *ngIf="!cart?.products || cart.products.length < 1" class="cart-empty-message">No items in cart</h2>
+
+  <div *ngFor="let item of cart.products" class="cart-item">
+    <img src="assets/placeholder.png" alt="product image" />
+    <div class="cart-item-details">
+      <h3>{{ item.product.name }}</h3>
+      <p>{{ item.product.description }}</p>
+      <p>Quantity: {{ item.quantity }}</p>
+      <p>Price: R {{ item.product.price | number }}</p>
+    </div>
+    <button mat-button>
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

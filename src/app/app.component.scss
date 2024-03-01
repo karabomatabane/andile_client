@@ -1,0 +1,22 @@
+.mat-icon-button {
+  justify-content: end !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.mat-button{
+   color: white;
+}.spacer{
+  flex: 1 1 auto;
+}
+
+.sticky-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Adjust the z-index as needed */
+}
+
+.brand a {
+text-decoration: none;
+color: #ffffff;
+}

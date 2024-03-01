@@ -1,0 +1,32 @@
+<div class="topHeader">
+  <button mat-raised-button color="primary" style="margin: .4rem .1rem;" (click)="addProduct()">Add</button>
+  <mat-form-field class="txtSearch" >
+  <input id="txtSearch" matInput (keyup)="applyFilter($event)" placeholder="Search...">
+  </mat-form-field>
+  <button matTooltip="{{ sort !== undefined ? (sort === true ? 'ascending order' : 'descending order') :  'not sorted' }}" mat-raised-button extended (click)="applySort()">
+    <mat-icon>sort</mat-icon>
+    Sort
+    <mat-icon class="grey-colour"> {{ sort !== undefined ? (sort === true ? 'arrow_upwards' : 'arrow_downwards') :  "" }}</mat-icon>
+  </button>
+  <button mat-raised-button color="primary" style="margin: .4rem .1rem;" (click)="clearFilters()">Clear Filters</button>
+</div>
+<mat-grid-list cols="5" rowHeight="500">
+  <mat-grid-tile *ngFor="let product of products" >
+    <mat-card style="width: 300px; margin-bottom: 2rem; margin-top: 2rem;">
+      <mat-card-content style="margin-top: 2rem;">
+        <img src="assets/placeholder.png"
+        mat-card-image
+        height="180"
+        alt="banner">
+        <h2>{{ product.name }}</h2>
+        <h3>R{{ product.price | number }}</h3>
+        <p style="height: 30px">{{ truncateDesc(product.description, 12) }}</p>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions>
+          <button mat-raised-button style="width:90%; margin-left: 5%;" (click)="buyProduct($event, product)">Buy</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

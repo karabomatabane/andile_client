@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  /* background-color: #whi; */
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  background-color: #F6F7FB;
+}
+
+.mat-card-title {
+  margin-top: .5rem !important;
+  /* text-align:center !important; */
+}
+
+.txtSearch {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topHeader {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grey-colour {
+  color: #8F9BB3;
+  font-size: 18px;
+  margin-top: .1rem;
+}
+
+.mat-form-field {
+  width: 40vh;
+}
